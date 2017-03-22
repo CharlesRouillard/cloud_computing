@@ -1,7 +1,7 @@
 const SlackBot = require('slackbots');
 var axios = require('axios');
 var et = require('html-entities').AllHtmlEntities;
-var CD = require('./cloudsight');
+var CD = require('./cloudsight.js');
 
 module.exports = function(params){
     var self = this;
