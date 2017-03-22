@@ -26,8 +26,8 @@ module.exports = function(params){
     self.onMessage = function(event){
         if(event.bot_id){
             console.log("MESSAGE FROM A BOT");
-            console.log(event.user);
-            console.log(self.user);
+            console.log(event);
+            //console.log(self.user);
             if(true){
                 //message d'un autre bot ue le notre
 
