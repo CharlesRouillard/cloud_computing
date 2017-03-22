@@ -34,6 +34,7 @@ module.exports = function(params){
         else{
             //message d'un humain
             console.log("MESSAGE FROM A HUMAN");
+            console.log(event.username);
             self.bot.postMessageToUser(event.username, 'Message quelconque');
         }
 
