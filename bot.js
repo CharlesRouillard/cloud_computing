@@ -10,9 +10,6 @@ module.exports = function(params){
     }
 
     self.onStart = function(){
-
-        self.bot.postMessageToUser('charles_adel', 'Moew');
-
         self.bot.getUser(self.bot.self.name).then(function(user){
             self.user = user;
         });
