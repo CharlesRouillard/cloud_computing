@@ -45,6 +45,7 @@ module.exports = function(params){
         }
         else{
             //message d'un humain
+            console.log("C EST UNE IMAGE");
             self.bot.postMessage(event.channel, 'EL PUEBLO UNIDO JAMAS SERA VENCIDO !');
         }
 
