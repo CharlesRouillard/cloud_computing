@@ -1,4 +1,5 @@
 const SlackBot = require('slackbots');
+var axios = require('axios');
 
 module.exports = function(params){
     var self = this;
@@ -16,7 +17,12 @@ module.exports = function(params){
 
 
         setInterval(function(){
-
+            axios.request({
+                url: 'https://api.chucknorris.io/jokes/random',
+                method: 'GET'
+            }).then(function(response){
+                self.bot.postMessageToChannel('general', response.value);
+            }).catch(console.log);
         }, 10000);
 
     }
