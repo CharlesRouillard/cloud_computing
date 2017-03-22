@@ -33,8 +33,7 @@ module.exports = function(params){
         else{
             //message d'un humain
             console.log("MESSAGE FROM A HUMAN");
-            console.log(self.bot.getUser(event.user));
-            self.bot.postMessageToUser(event.user, 'Message quelconque');
+            self.bot.postMessage(event.user, 'Message quelconque');
         }
 
     }
