@@ -26,11 +26,10 @@ module.exports = function(params){
     self.onMessage = function(event){
         if(event.bot_id){
             console.log("MESSAGE FROM A BOT");
-            //console.log(event);
-            console.log(self.user);
-            if(true){
-                //message d'un autre bot ue le notre
-
+            if(self.user.profile.bot_id != event.bot_id){
+                setTimeout(function(){
+                    self.bot.postMessage(event.channel, 'Hey copain bot !');
+                },2000);
             }
         }
         else{
