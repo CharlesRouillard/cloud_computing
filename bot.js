@@ -23,7 +23,6 @@ module.exports = function(params){
     }
 
     self.onMessage = function(event){
-        console.log(event.bot_id);
         if(event.bot_id){
             console.log("MESSAGE FROM A BOT");
             if(event.bot_id != self.user.bot_id){
@@ -34,7 +33,7 @@ module.exports = function(params){
         else{
             //message d'un humain
             console.log("MESSAGE FROM A HUMAN");
-            console.log(event.username);
+            console.log(event);
             self.bot.postMessageToUser(event.username, 'Message quelconque');
         }
 
