@@ -27,6 +27,5 @@ module.exports = function(params){
     self.onMessage = function(event){
         console.log("USEEEEEEEEEEEEEEEEEERS");
         console.log(self.bot.getUser(event.user));
-        console.log('USEEEEEEEEEEEEER' + self.user);
     }
 }
