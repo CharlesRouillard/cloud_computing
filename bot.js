@@ -20,13 +20,16 @@ module.exports = function(params){
     }
 
     self.onEvent = function(event){
+        console.log(event);
         if(event.type == 'message')
             self.onMessage(event)
     }
 
     self.onMessage = function(event){
         console.log("USEEEEEEEEEEEEEEEEEERS");
-        console.log(self.bot.getUser(event.user));
+        self.bot.getUser(event.user).then(function(data) {
+            console.log(data);
+        });
 
     }
 }
