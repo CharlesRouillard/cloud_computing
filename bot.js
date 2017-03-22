@@ -20,13 +20,11 @@ module.exports = function(params){
     }
 
     self.onEvent = function(event){
-        console.log('############################################################');
-        console.log(event);
-        console.log('############################################################');
-        //if type == message then self.onMessage(event)
+        if(event.type == 'message')
+            self.onMessage(event)
     }
 
     self.onMessage = function(event){
-
+        console.log('USEEEEEEEEEEEEER' + self.user);
     }
 }
