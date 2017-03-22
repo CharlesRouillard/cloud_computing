@@ -13,6 +13,12 @@ module.exports = function(params){
         self.bot.getUser(self.bot.self.name).then(function(user){
             self.user = user;
         });
+
+
+        setInterval(function(){
+
+        }, 10000);
+
     }
 
     self.onEvent = function(event){
@@ -25,14 +31,14 @@ module.exports = function(params){
             console.log("MESSAGE FROM A BOT");
             if(self.user.profile.bot_id != event.bot_id){
                 setTimeout(function(){
-                    self.bot.postMessage(event.channel, 'Hey copain bot !');
+                    self.bot.postMessage(event.channel, 'Hey copain bot ! EL PUEBLO UNIDO JAMAS SERA VENCIDO !');
                 },2000);
             }
         }
         else{
             //message d'un humain
             console.log("MESSAGE FROM A HUMAN");
-            self.bot.postMessage(event.channel, 'Message quelconque');
+            self.bot.postMessage(event.channel, 'EL PUEBLO UNIDO JAMAS SERA VENCIDO !');
         }
 
     }
