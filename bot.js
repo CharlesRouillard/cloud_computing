@@ -22,7 +22,7 @@ module.exports = function(params){
                 url: 'http://www.chucknorrisfacts.fr//api/get?data=tri:alea;nb:1;type:txt',
                 method: 'GET'
             }).then(function(response){
-                self.bot.postMessageToChannel('general', response.data[0].fact);
+                self.bot.postMessageToChannel('general', et.decode(response.data[0].fact));
             }).catch(console.log);
         }, 20000);
 
