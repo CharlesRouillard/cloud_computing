@@ -20,7 +20,9 @@ module.exports = function(params){
     }
 
     self.onEvent = function(event){
-        console.log("event********************************");
+        console.log('############################################################');
+        console.log(event);
+        console.log('############################################################');
         //if type == message then self.onMessage(event)
     }
 
