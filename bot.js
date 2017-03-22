@@ -12,24 +12,28 @@ module.exports = function(params){
     self.onStart = function(){
         self.bot.on('message', self.onEvent);
 
-        self.bot.postMessageToUser('charles_adel', 'meow!');
-
         self.bot.getUser(self.bot.self.name).then(function(user){
             self.user = user;
         });
     }
 
     self.onEvent = function(event){
-        console.log(event);
         if(event.type == 'message')
             self.onMessage(event)
     }
 
     self.onMessage = function(event){
         console.log("USEEEEEEEEEEEEEEEEEERS");
-        self.bot.getUser(event.user).then(function(data) {
-            console.log(data);
-        });
+        if(event.bot_id){
+            if(event.bot_id != self.user.bot_id){
+                //message d'un autre bot ue le notre
+
+            }
+        }
+        else{
+            //message d'un humain
+            self.bot.postMessageToUser(event.username, 'Message quelconque');
+        }
 
     }
 }
