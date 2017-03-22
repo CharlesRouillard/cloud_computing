@@ -1,6 +1,7 @@
 const SlackBot = require('slackbots');
 var axios = require('axios');
 var et = require('html-entities').AllHtmlEntities;
+var CD = require('./cloudsight');
 
 module.exports = function(params){
     var self = this;
@@ -29,13 +30,13 @@ module.exports = function(params){
     }
 
     self.onEvent = function(event){
+        console.log(event);
         if(event.type == 'message' && event.text)
             self.onMessage(event)
     }
 
     self.onMessage = function(event){
         if(event.bot_id){
-            console.log("MESSAGE FROM A BOT");
             if(self.user.profile.bot_id != event.bot_id){
                 setTimeout(function(){
                     self.bot.postMessage(event.channel, 'Hey copain bot ! EL PUEBLO UNIDO JAMAS SERA VENCIDO !');
@@ -44,7 +45,6 @@ module.exports = function(params){
         }
         else{
             //message d'un humain
-            console.log("MESSAGE FROM A HUMAN");
             self.bot.postMessage(event.channel, 'EL PUEBLO UNIDO JAMAS SERA VENCIDO !');
         }
 
