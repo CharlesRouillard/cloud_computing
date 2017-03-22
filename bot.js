@@ -1,5 +1,6 @@
 const SlackBot = require('slackbots');
 var axios = require('axios');
+var et = require('html-entities').AllHtmlEntities;
 
 module.exports = function(params){
     var self = this;
@@ -18,12 +19,12 @@ module.exports = function(params){
 
         setInterval(function(){
             axios.request({
-                url: 'https://api.chucknorris.io/jokes/random',
+                url: 'http://www.chucknorrisfacts.fr//api/get?data=tri:alea;nb:1;type:txt',
                 method: 'GET'
             }).then(function(response){
-                self.bot.postMessageToChannel('general', response.value);
+                self.bot.postMessageToChannel('general', response.data[0].fact);
             }).catch(console.log);
-        }, 10000);
+        }, 20000);
 
     }
 
