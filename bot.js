@@ -30,9 +30,13 @@ module.exports = function(params){
     }
 
     self.onEvent = function(event){
-        console.log(event);
-        if(event.type == 'message' && event.text)
-            self.onMessage(event)
+        //console.log(event);
+        if(event.type == 'message' && event.text){
+        	if(event.message)
+                self.onImage(event);
+            else
+                self.onMessage(event);
+        }
     }
 
     self.onMessage = function(event){
@@ -45,9 +49,12 @@ module.exports = function(params){
         }
         else{
             //message d'un humain
-            console.log("C EST UNE IMAGE");
             self.bot.postMessage(event.channel, 'EL PUEBLO UNIDO JAMAS SERA VENCIDO !');
         }
+    }
 
+    self.onImage = function(event){
+    	console.log("CESST UNE IMAGE");
+        console.log(event.message.attachments);
     }
 }
