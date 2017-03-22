@@ -10,6 +10,9 @@ module.exports = function(params){
     }
 
     self.onStart = function(){
+
+        self.bot.postMessageToUser('charles_adel', 'Moew');
+
         self.bot.getUser(self.bot.self.name).then(function(user){
             self.user = user;
         });
@@ -23,7 +26,9 @@ module.exports = function(params){
     self.onMessage = function(event){
         if(event.bot_id){
             console.log("MESSAGE FROM A BOT");
-            if(event.bot_id != self.user.bot_id){
+            console.log(event.user);
+            console.log(self.user);
+            if(true){
                 //message d'un autre bot ue le notre
 
             }
