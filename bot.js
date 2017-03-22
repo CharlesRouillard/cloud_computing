@@ -12,7 +12,7 @@ module.exports = function(params){
     self.onStart = function(){
         self.bot.on('message', self.onEvent);
 
-        /*self.bot.postMessageToUser('charles_adel', 'meow!');*/
+        self.bot.postMessageToUser('charles_adel', 'meow!');
 
         self.bot.getUser(self.bot.self.name).then(function(user){
             self.user = user;
@@ -27,6 +27,6 @@ module.exports = function(params){
     self.onMessage = function(event){
         console.log("USEEEEEEEEEEEEEEEEEERS");
         console.log(self.bot.getUser(event.user));
-        
+
     }
 }
