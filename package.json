@@ -1,0 +1,21 @@
+{
+  "name": "cloud_computing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browserify client.js > public/bundle.js && node index.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "browserify": "^14.1.0",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "moch": "0.0.1",
+    "mocha": "^3.2.0",
+    "slackbots": "^1.0.2"
+  }
+}
