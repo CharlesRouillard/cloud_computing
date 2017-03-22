@@ -18,7 +18,7 @@ module.exports = function(params){
     }
 
     self.onEvent = function(event){
-        if(event.type == 'message')
+        if(event.type == 'message' && event.text)
             self.onMessage(event)
     }
 
@@ -33,7 +33,7 @@ module.exports = function(params){
         else{
             //message d'un humain
             console.log("MESSAGE FROM A HUMAN");
-            self.bot.postMessage(event.user, 'Message quelconque');
+            self.bot.postMessage(event.channel, 'Message quelconque');
         }
 
     }
