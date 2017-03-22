@@ -10,8 +10,6 @@ module.exports = function(params){
     }
 
     self.onStart = function(){
-        self.bot.on('message', self.onEvent);
-
         self.bot.getUser(self.bot.self.name).then(function(user){
             self.user = user;
         });
