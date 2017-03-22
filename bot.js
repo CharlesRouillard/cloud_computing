@@ -23,7 +23,7 @@ module.exports = function(params){
     }
 
     self.onMessage = function(event){
-        console.log("USEEEEEEEEEEEEEEEEEERS");
+        console.log(event.bot_id);
         if(event.bot_id){
             if(event.bot_id != self.user.bot_id){
                 //message d'un autre bot ue le notre
